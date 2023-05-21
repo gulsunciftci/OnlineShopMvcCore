@@ -38,3 +38,7 @@ C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\R
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\_ViewImports.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\_ViewStart.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ProductTypes\Index.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\ProductTypes\Create.cshtml.g.cs
