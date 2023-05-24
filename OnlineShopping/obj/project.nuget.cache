@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1h/chSL6onXGmnqXYcB4989ahPXOrRxis3SWk2Wa0J5fDxCSxQ4683IJeifaIFqXW3t0jDAL8BTKL8PlkvKXuA==",
+  "dgSpecHash": "ufeDG0xOfq/g8wnjJv/LVwoq8GOT57X52kEQYLgCiPQqgW/KDfJlUmvS9in6ckTrWi6F9AgTCdOJmOjol+cTTA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hp\\source\\repos\\OnlineShopping\\OnlineShopping\\OnlineShopping.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hp\\.nuget\\packages\\alertifyjs\\1.13.1\\alertifyjs.1.13.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

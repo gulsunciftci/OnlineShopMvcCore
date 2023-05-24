@@ -2,6 +2,9 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AlertifyJS/1.13.1": {
+        "type": "package"
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4739,6 +4742,35 @@
     }
   },
   "libraries": {
+    "AlertifyJS/1.13.1": {
+      "sha512": "lJyjcEN++TZP+U1jpNSMEBCI53hsNvexvAEOwo2+W4BjRAq81ElX0cRCgbfHPMKGauvXVPvlo6aAio4tJumy7w==",
+      "type": "package",
+      "path": "alertifyjs/1.13.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "alertifyjs.1.13.1.nupkg.sha512",
+        "alertifyjs.nuspec",
+        "content/Content/alertifyjs/alertify.css",
+        "content/Content/alertifyjs/alertify.min.css",
+        "content/Content/alertifyjs/alertify.rtl.css",
+        "content/Content/alertifyjs/alertify.rtl.min.css",
+        "content/Content/alertifyjs/themes/bootstrap.css",
+        "content/Content/alertifyjs/themes/bootstrap.min.css",
+        "content/Content/alertifyjs/themes/bootstrap.rtl.css",
+        "content/Content/alertifyjs/themes/bootstrap.rtl.min.css",
+        "content/Content/alertifyjs/themes/default.css",
+        "content/Content/alertifyjs/themes/default.min.css",
+        "content/Content/alertifyjs/themes/default.rtl.css",
+        "content/Content/alertifyjs/themes/default.rtl.min.css",
+        "content/Content/alertifyjs/themes/semantic.css",
+        "content/Content/alertifyjs/themes/semantic.min.css",
+        "content/Content/alertifyjs/themes/semantic.rtl.css",
+        "content/Content/alertifyjs/themes/semantic.rtl.min.css",
+        "content/Scripts/alertify.js",
+        "content/Scripts/alertify.min.js"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -13030,6 +13062,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AlertifyJS >= 1.13.1",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
@@ -13090,6 +13123,10 @@
       "netcoreapp2.2": {
         "targetAlias": "netcoreapp2.2",
         "dependencies": {
+          "AlertifyJS": {
+            "target": "Package",
+            "version": "[1.13.1, )"
+          },
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "[2.2.0, )"

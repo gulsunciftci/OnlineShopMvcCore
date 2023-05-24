@@ -29,6 +29,7 @@
     ".NETCoreApp,Version=v2.2": {
       "OnlineShopping/1.0.0": {
         "dependencies": {
+          "AlertifyJS": "1.13.1",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
@@ -49,6 +50,7 @@
           "OnlineShopping.dll": {}
         }
       },
+      "AlertifyJS/1.13.1": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -3573,6 +3575,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AlertifyJS/1.13.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lJyjcEN++TZP+U1jpNSMEBCI53hsNvexvAEOwo2+W4BjRAq81ElX0cRCgbfHPMKGauvXVPvlo6aAio4tJumy7w==",
+      "path": "alertifyjs/1.13.1",
+      "hashPath": "alertifyjs.1.13.1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
