@@ -67,6 +67,7 @@ namespace OnlineShopping.Areas.Admin.Controllers
             {
                 _db.Update(productTypes);
                 await _db.SaveChangesAsync();
+                TempData["save"] = "Product type edited";
                 return RedirectToAction(nameof(Index));
             }
             return View(productTypes);
@@ -134,6 +135,7 @@ namespace OnlineShopping.Areas.Admin.Controllers
             {
                 _db.Remove(productType);
                 await _db.SaveChangesAsync();
+                TempData["save"] = "Product type deleted";
                 return RedirectToAction(nameof(Index));
             }
             return View(productTypes);
