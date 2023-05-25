@@ -52,3 +52,6 @@ C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\R
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\SpecialTags\Index.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ButtonPartialProductTypes.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ButtonPartialSpecialTags.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ButtonPartialProduct.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Products\Create.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Products\Index.cshtml.g.cs
