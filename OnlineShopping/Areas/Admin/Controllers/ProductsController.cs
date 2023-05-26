@@ -26,6 +26,20 @@ namespace OnlineShopping.Areas.Admin.Controllers
         {
             return View(_db.Products.Include(c => c.ProductTypes).Include(f => f.SpecialTags).ToList());
         }
+
+        [HttpPost]
+        //POST Index action method
+        public IActionResult Index(decimal? lowAmount, decimal? largeAmount)
+        {
+            var products = _db.Products.Include(c => c.ProductTypes).Include(c => c.SpecialTags).Where(c => c.Price >= lowAmount && c.Price <= largeAmount).ToList();
+            if (lowAmount == null || largeAmount == null)
+            {
+                products = _db.Products.Include(c => c.ProductTypes).Include(c => c.SpecialTags).ToList();
+            }
+            return View(products);
+        }
+
+
         public ActionResult Create()
         {
             ViewData["productTypeId"] = new SelectList(_db.ProductTypes.ToList(), "Id", "ProductType");
@@ -49,6 +63,15 @@ namespace OnlineShopping.Areas.Admin.Controllers
             }
             if (ModelState.IsValid)
             {
+                var searchProduct = _db.Products.FirstOrDefault(c => c.Name == products.Name);
+                if (searchProduct != null)
+                {
+                    ViewData["productTypeId"] = new SelectList(_db.ProductTypes.ToList(), "Id", "ProductType");
+                    ViewData["TagId"] = new SelectList(_db.SpecialTags.ToList(), "Id", "SpecialTag");
+                    ViewBag.message = "This product is already exist";
+
+                    return View(products);
+                }
                 _db.Products.Add(products);
                 await _db.SaveChangesAsync();
                 TempData["save"] = "Product has been saved";
