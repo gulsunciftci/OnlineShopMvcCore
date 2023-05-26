@@ -99,5 +99,73 @@ namespace OnlineShopping.Areas.Admin.Controllers
             }
             return View(products);
         }
+        //Details Get Action Method
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var product = _db.Products.Include(c => c.ProductTypes).Include(f => f.SpecialTags).ToList().FirstOrDefault(c => c.Product == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+
+            return View(product);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //Details Post Action Method
+        public IActionResult Details(Products products)
+        {
+
+            return RedirectToAction(nameof(Index));
+
+        }
+        //Delete Get Action Method
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var product = _db.Products.Include(c => c.ProductTypes).Include(f => f.SpecialTags).ToList().Where(c => c.Product == id).FirstOrDefault();
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+
+            return View(product);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //Delete Post Action Method
+        public async Task<IActionResult> Delete(int id, Products products)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            if (id != products.Product)
+            {
+                return NotFound();
+            }
+            var product = _db.Products.Include(c => c.ProductTypes).Include(f => f.SpecialTags).ToList().FirstOrDefault(c => c.Product == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Remove(product);
+                await _db.SaveChangesAsync();
+                TempData["save"] = "Product deleted";
+                return RedirectToAction(nameof(Index));
+            }
+            return View(product);
+        }
     }
 }
