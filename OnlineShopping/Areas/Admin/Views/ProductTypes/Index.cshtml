@@ -12,6 +12,13 @@
           </button>
        </div>
  }
+ <script type="text/javascript">
+$(document).ready(function() {
+    $('#myTable').DataTable({
+       
+    });
+});
+</script>
 }
 <br />
 <div class="row">
@@ -25,7 +32,8 @@
 </div>
 <br />
 <div>
-    <table class="table table-striped border">
+    <table class="table table-striped border" id="myTable">
+        <thead>
         <tr class="table-info">
             <th>
                 @Html.DisplayNameFor(c=>c.ProductType)
@@ -33,6 +41,8 @@
             <th></th>
             <th></th>
         </tr>
+        </thead>
+        <tbody>
         @foreach (var item in Model)
         {
             <tr>
@@ -42,6 +52,7 @@
                 </td>
             </tr>
         }
+        </tbody>
     </table>
 </div>
 

@@ -58,3 +58,4 @@ C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\R
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Products\Edit.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Products\Details.cshtml.g.cs
 C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Products\Delete.cshtml.g.cs
+C:\Users\Hp\source\repos\OnlineShopping\OnlineShopping\obj\Debug\netcoreapp2.2\Razor\Areas\Customer\Views\Home\Details.cshtml.g.cs
