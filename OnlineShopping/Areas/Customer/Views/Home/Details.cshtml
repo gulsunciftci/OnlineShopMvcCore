@@ -6,7 +6,9 @@
 @{
     ViewData["Title"] = "Details";
 }
-
+<head>
+<script src="https://kit.fontawesome.com/0b22872ed8.js" crossorigin="anonymous"></script>
+</head>
 @{
 
     List<Products> products = HttpContextAccessor.HttpContext.Session.Get<List<Products>>("products");
