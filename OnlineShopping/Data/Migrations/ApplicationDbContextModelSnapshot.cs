@@ -184,6 +184,54 @@ namespace OnlineShopping.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("OnlineShopping.Models.Orders", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<DateTime>("OrderDate");
+
+                    b.Property<string>("OrderNo");
+
+                    b.Property<string>("PhoneNo")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("OnlineShopping.Models.OrdersDetails", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OrderId");
+
+                    b.Property<int?>("OrdersId");
+
+                    b.Property<int>("ProductsProduct");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrdersId");
+
+                    b.HasIndex("ProductsProduct");
+
+                    b.ToTable("OrdersDetails");
+                });
+
             modelBuilder.Entity("OnlineShopping.Models.ProductTypes", b =>
                 {
                     b.Property<int>("Id")
@@ -217,17 +265,13 @@ namespace OnlineShopping.Data.Migrations
 
                     b.Property<int>("ProductTypeId");
 
-                    b.Property<int?>("ProductTypesId");
-
                     b.Property<int>("SpecialTagId");
-
-                    b.Property<int?>("SpecialTagsId");
 
                     b.HasKey("Product");
 
-                    b.HasIndex("ProductTypesId");
+                    b.HasIndex("ProductTypeId");
 
-                    b.HasIndex("SpecialTagsId");
+                    b.HasIndex("SpecialTagId");
 
                     b.ToTable("Products");
                 });
@@ -291,15 +335,29 @@ namespace OnlineShopping.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("OnlineShopping.Models.OrdersDetails", b =>
+                {
+                    b.HasOne("OnlineShopping.Models.Orders", "Orders")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrdersId");
+
+                    b.HasOne("OnlineShopping.Models.Products", "Products")
+                        .WithMany()
+                        .HasForeignKey("ProductsProduct")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("OnlineShopping.Models.Products", b =>
                 {
                     b.HasOne("OnlineShopping.Models.ProductTypes", "ProductTypes")
                         .WithMany()
-                        .HasForeignKey("ProductTypesId");
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("OnlineShopping.Models.SpecialTags", "SpecialTags")
                         .WithMany()
-                        .HasForeignKey("SpecialTagsId");
+                        .HasForeignKey("SpecialTagId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }
