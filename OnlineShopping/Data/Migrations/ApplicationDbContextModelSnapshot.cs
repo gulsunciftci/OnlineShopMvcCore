@@ -73,6 +73,9 @@ namespace OnlineShopping.Data.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
@@ -112,6 +115,8 @@ namespace OnlineShopping.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -217,9 +222,7 @@ namespace OnlineShopping.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("OrderId");
-
-                    b.Property<int?>("OrdersId");
+                    b.Property<int>("OrdersId");
 
                     b.Property<int>("ProductsProduct");
 
@@ -290,6 +293,17 @@ namespace OnlineShopping.Data.Migrations
                     b.ToTable("SpecialTags");
                 });
 
+            modelBuilder.Entity("OnlineShopping.Models.ApplicationUser", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.HasDiscriminator().HasValue("ApplicationUser");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -339,7 +353,8 @@ namespace OnlineShopping.Data.Migrations
                 {
                     b.HasOne("OnlineShopping.Models.Orders", "Orders")
                         .WithMany("OrderDetails")
-                        .HasForeignKey("OrdersId");
+                        .HasForeignKey("OrdersId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("OnlineShopping.Models.Products", "Products")
                         .WithMany()
