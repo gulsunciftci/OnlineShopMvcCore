@@ -72,7 +72,7 @@
             </div>
             <div class="col-8">
                  @*<select asp-for="SpecialTagId" asp-items="ViewBag.TagId" class="form-control"></select>*@
-                 <input asp-for="OrderDate" class="form-control"/>
+                 <input asp-for="OrderDate" type="text"   readonly="readonly"  class="form-control"/>
                  <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
         </div>
@@ -110,4 +110,15 @@
 </form>
 @section Scripts{
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+       $(document).ready(function() {
+           $("#OrderDate").datepicker({
+               showAnim: "slide",
+               changeMonth: true,
+               changeYear: true
+           });
+        });
+    </script>
+
 }
