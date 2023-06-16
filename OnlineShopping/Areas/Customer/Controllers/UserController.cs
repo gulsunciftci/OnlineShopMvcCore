@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShopping.Data;
@@ -10,6 +11,7 @@ using OnlineShopping.Models;
 namespace OnlineShopping.Areas.Customer.Controllers
 {
     [Area("Customer")]
+    [Authorize]
     public class UserController : Controller
     {
         UserManager<IdentityUser> _userManager;
@@ -24,7 +26,7 @@ namespace OnlineShopping.Areas.Customer.Controllers
             var dd = _userManager.GetUserId(HttpContext.User);
             return View(_db.ApplicationUsers.ToList());
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult>Create()
         {
             return View();
