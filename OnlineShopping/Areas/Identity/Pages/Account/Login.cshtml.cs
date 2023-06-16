@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using OnlineShopping.Data;
-using OnlineShop.Models;
+using OnlineShopping.Models;
 
 namespace OnlineShop.Areas.Identity.Pages.Account
 {
